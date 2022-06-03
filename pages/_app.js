@@ -7,7 +7,7 @@ import { publicProvider } from 'wagmi/providers/public';
 import { ChakraProvider } from '@chakra-ui/react';
 
 const { chains, provider } = configureChains(
-  [chain.polygon], // you can add more chains here like chain.mainnet, chain.optimism etc.
+  [chain.polygon],
   [
     jsonRpcProvider({
       rpc: () => {
@@ -21,7 +21,7 @@ const { chains, provider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'Next.js Chakra Rainbowkit Wagmi Starter',
+  appName: 'Swole Protocol',
   chains,
 });
 
