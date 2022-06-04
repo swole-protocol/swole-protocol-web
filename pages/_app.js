@@ -1,16 +1,11 @@
 import '../styles/globals.css';
 import '@rainbow-me/rainbowkit/styles.css';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { publicProvider } from 'wagmi/providers/public';
-import {
-  ChakraProvider,
-  Heading,
-  Flex
-} from '@chakra-ui/react';
-
+import { ChakraProvider, Box } from '@chakra-ui/react';
+import NavBar from './NavBar'
 const { chains, provider } = configureChains(
   [chain.polygon],
   [
@@ -41,11 +36,10 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
-          <Flex justifyContent='space-between' p={2}>
-            <Heading size='lg'>Swole</Heading>
-            <ConnectButton />
-          </Flex>
-          <Component {...pageProps} />
+          <NavBar />
+          <Box p={8}>
+            <Component {...pageProps} />
+          </Box>
         </RainbowKitProvider>
       </WagmiConfig>
     </ChakraProvider>
