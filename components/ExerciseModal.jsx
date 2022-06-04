@@ -22,7 +22,7 @@ import {
             boxShadow: '0px 0px 35px #a5a5a5',
             bg: '#eee', color: 'black'
           }} color='#32CE2E' onClick={onOpen}>
-          Exercise {description}
+          {name}
         </Button>
 
 
