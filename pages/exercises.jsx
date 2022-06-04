@@ -8,7 +8,7 @@ function Exercise() {
   return(
     <HStack>
       {data.exercises.map(exercise => {
-        return <ExerciseModal exercise={exercise}/>
+        return <ExerciseModal exercise={exercise} />
       })}
     </HStack>
   )
