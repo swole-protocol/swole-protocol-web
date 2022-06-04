@@ -38,7 +38,7 @@ import {
             {name}
             </Button> */}
             
-            <Center py={6}>
+            <Center py={6} onClick={onOpen}>
                 <Box
                     maxW={'330px'}
                     w={'full'}
@@ -50,7 +50,7 @@ import {
                     textAlign={'center'}
                     p={6}
                     color={useColorModeValue('gray.800', 'white')}
-                    align={'center'} onClick={onOpen}>
+                    align={'center'}>
                     <Text
                         fontSize={'sm'}
                         fontWeight={500}
@@ -67,40 +67,20 @@ import {
                     </Stack>
 
                     <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
-                    <List spacing={3}>
-                        <ListItem>
-                        <ListIcon as={CheckIcon} color="green.400" />
-                            {musclegroup}
-                        </ListItem>
-                        <ListItem>
-                        <ListIcon as={CheckIcon} color="green.400" />
-                            {description}
-                        </ListItem>
-                        <ListItem>
-                        <ListIcon as={CheckIcon} color="green.400" />
-                            {description}
-                        </ListItem>
-                        <ListItem>
-                        <ListIcon as={CheckIcon} color="green.400" />
-                            {description}
-                        </ListItem>
-                    </List>
-
-                    <Button
-                        mt={10}
-                        w={'full'}
-                        bg={'green.400'}
-                        color={'white'}
-                        rounded={'xl'}
-                        boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
-                        _hover={{
-                        bg: 'green.500',
-                        }}
-                        _focus={{
-                        bg: 'green.500',
-                        }}>
-                        Add to Workout
-                    </Button>
+                        <Button
+                            w={'full'}
+                            bg={'green.400'}
+                            color={'white'}
+                            rounded={'xl'}
+                            boxShadow={'0 5px 20px 0px rgb(72 187 120 / 43%)'}
+                            _hover={{
+                            bg: 'green.500',
+                            }}
+                            _focus={{
+                            bg: 'green.500',
+                            }}>
+                            Add to Workout
+                        </Button>
                     </Box>
                 </Box>
                 </Center>
@@ -152,14 +132,6 @@ import {
                                     <Checkbox>Include Media</Checkbox>
                                     <Link color={'blue.400'}>Reset</Link>
                                 </Stack>
-                                <Button
-                                    bg={'blue.400'}
-                                    color={'white'}
-                                    _hover={{
-                                    bg: 'blue.500',
-                                    }} onClick={onMint}>
-                                    Mint
-                                </Button>
                             </Stack>
                         </Stack>
                     </Box>
