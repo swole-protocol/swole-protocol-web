@@ -1,7 +1,7 @@
 
 
 function Exercise() {
-  return(
+  return (
     <div>EXERCISES!</div>
   )
 }
