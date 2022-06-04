@@ -23,6 +23,38 @@
 		 "equipment" : "dumbbell",
 		 "type" : "upper body",
 		 "MetaData" : []
-	   } 
+	   },
+	   {
+		"name" : "Exercise 3",
+		"description" : "Workout 1",
+		"musclegroup" : "Chest",
+		"equipment" : "dumbbell",
+		"type" : "upper body",
+		"MetaData" : []
+	  },
+	  {
+		"name" : "Exercise 3",
+		"description" : "Workout 1",
+		"musclegroup" : "Chest",
+		"equipment" : "dumbbell",
+		"type" : "upper body",
+		"MetaData" : []
+	  },
+	  {
+		"name" : "Exercise 3",
+		"description" : "Workout 1",
+		"musclegroup" : "Chest",
+		"equipment" : "dumbbell",
+		"type" : "upper body",
+		"MetaData" : []
+	  },
+	  {
+		"name" : "Exercise 3",
+		"description" : "Workout 1",
+		"musclegroup" : "Chest",
+		"equipment" : "dumbbell",
+		"type" : "upper body",
+		"MetaData" : []
+	  } 
    ]
 }
