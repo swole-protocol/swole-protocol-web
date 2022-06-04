@@ -1,0 +1,32 @@
+{
+  "pinataMetadata": {
+    "name": "Workout 1"
+  },
+  "pinataContent": {
+    "name": "Workout 1",
+    "description": "Workout created by the swole protocol",
+    "image": "https://gateway.pinata.cloud/ipfs/QmePeiE8Va9tw4B6Dbp7G7qfbE8KNmh4gx2kKzTifH9BbD",
+    "attributes": [
+      {
+        "trait_type": "owner",
+        "value": "narb"
+      },
+      {
+        "trait_type": "exersice 1",
+        "value": "url_1"
+      },
+      {
+        "trait_type": "exersice 2",
+        "value": "url_2"
+      },
+      {
+        "trait_type": "exersice 3",
+        "value": "url_3"
+      },
+      {
+        "trait_type": "rest time (in seconds)",
+        "value": "30"
+      }
+    ]
+  }
+}
