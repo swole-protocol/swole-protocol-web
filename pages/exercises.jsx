@@ -1,7 +1,6 @@
 import { Wrap, WrapItem, Flex, Box, Heading, Center, Icon, HStack } from "@chakra-ui/react";
 import useAddress from '../utils/useAddress.js';
 import { MdClose } from 'react-icons/md'
-import {ArweaveApolloClient} from './api/apollo/apollo-client.ts';
 import ExerciseModal from "../components/ExerciseModal";
 import MintButton from "../components/mint/mint-button";
 import { useState } from 'react';
