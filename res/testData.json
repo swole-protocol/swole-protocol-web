@@ -1,0 +1,84 @@
+[
+    {
+        "name": "Bulgarian Split Squats",
+        "description": "This looks similar to a lunge, but the back foot is up on a bench.  Make sure your feet are shoulder width apart to avoid losing your balance!  These can be a challenge unweighted for high reps, or you can add weight with dumbbells, kettlebells, or even a barbell!",
+        "equipment": 1,
+        "muscle_groups": [4,5,6],
+        "image_link": "https://www.wikihow.com/images/thumb/5/56/Do-a-Glute-Targeted-Bulgarian-Split-Squat-Step-13.jpg/v4-460px-Do-a-Glute-Targeted-Bulgarian-Split-Squat-Step-13.jpg",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Goblet Squats",
+        "description": "this is a traditional front squat, but with a heavy dumbbell held just below your chin.",
+        "equipment": 1,
+        "muscle_groups": [4,5,6,7],
+        "image_link": "https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Dumbbell-Goblet-Squat_600x600.png?v=1612049778",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Farmers Lunges ",
+        "description": "the same stance as a Farmer Carry, but you are taking big long strides into lunges the whole way down the gym and back.",
+        "equipment": 1,
+        "muscle_groups": [7,9],
+        "image_link": "https://jointstrikecrossfit.files.wordpress.com/2015/08/db-lunge.jpg",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Deficet Deadlift",
+        "description": "These can really improve your strength at the lift-off of a deadlift.  A deadlift standing on a platform or weights",
+        "equipment": 0,
+        "muscle_groups": [1,4,5,6,9],
+        "image_link": "https://www.t-nation.com/wp-content/uploads/2018/12/The-1-Plate-Deficit-Deadlift.jpg",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Plank Walk-Ups",
+        "description": "start in a high plank position (on your hands) and move to a low plank position (resting on the forearms)  Then back up to the high plank position, moving one arm at a time.",
+        "equipment": 8,
+        "muscle_groups": [7,10],
+        "image_link": "https://st2.depositphotos.com/4293685/8642/v/950/depositphotos_86427412-stock-illustration-perfect-body-with-the-plank.jpg",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Sled Drag",
+        "description": "Most sleds come with straps to put over your shoulders, but attaching a rope will work just fine, too.  Grab the straps or that rope and start walking or running depending on the weight and distance!",
+        "equipment": 9,
+        "muscle_groups": [4,5,6,8],
+        "image_link": "https://miro.medium.com/max/1400/0*HoW1pc7i4QSJKtu1",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Turkish Get-Ups",
+        "description": "Basically, you start by lying on the ground, pressing a KB or DB straight in the air.  Then you stand up, keeping the KB above you  the whole time.  They are fun, challenging, and humbling all at the same time!  Once you’ve mastered the KB version, you can humble yourself all over again with a barbell!",
+        "equipment": 2,
+        "muscle_groups": [1,2,4,5,6,7,9,10],
+        "video_link": "https://www.youtube.com/watch?v=ztTOn0rSMis",
+        "image_link": "https://www.mensjournal.com/wp-content/uploads/9-50759643-d1b7-44b0-ac9b-3db421e8e0d6.jpg?w=700&quality=86&strip=all",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Dumbbell Rollback Extenstions",
+        "description": "Aka Skullcrushers. Lie on the floor with a pair of dumbbells lined up by your ears.  Reach overhead, then perform a tricep extension and return the dumbbells to their original position.  Make sure to keep control and avoid failure, or you might find out why they’re called skull crushers.",
+        "equipment": 1,
+        "muscle_groups": [2],
+        "image_link": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F35%2F2020%2F03%2F26%2Fdumbbell-skull-crushers.jpg",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Push Up to Dip",
+        "description": "Take a pair of nice tall, heavy kettlebells if you don’t have paralletes available.  Hold the handles and do a push-up. Now tuck your knees, swing your feet forward, and end up with your legs out straight in front and your heels on the ground.  Take a moment to marvel at your own hip mobility. Now do a dip. Rinse and repeat.",
+        "equipment": 2,
+        "muscle_groups": [0,2,7,9,10],
+        "image_link": "https://img.freepik.com/free-photo/portrait-man-doing-push-ups-with-kettlebell_13339-164825.jpg?w=2000",
+        "brand": "swole-protocol"
+    },
+    {
+        "name": "Single Arm Overhead Lunges",
+        "description": "Single Arm Overhead Lunges",
+        "equipment": 1,
+        "muscle_groups": [1,2,4,5,6,7,9,10],
+        "image_link": "https://media1.popsugar-assets.com/files/thumbor/jdrkwOX_HADpLAeNaOevFpLum7w/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/03/27/745/n/1922729/tmp_HDE7XM_a34f3285e6dcc892_Lunge.jpg",
+        "brand": "swole-protocol"
+    }
+]
+
