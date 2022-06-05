@@ -61,7 +61,7 @@ function Exercises(data) {
           );
         })}
       </Wrap>
-      <Box>
+      <Box position='sticky'>
         <Box mt={6} h='30vh' w='25rem' border='1px solid #eee' textAlign='center'>
           <Heading size='md' pb={4}>Workout Plan</Heading>
           {newWorkout.length === 0 && <p>add workouts to mint</p>}

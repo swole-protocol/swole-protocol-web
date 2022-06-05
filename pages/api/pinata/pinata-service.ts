@@ -1,5 +1,5 @@
 import { post } from '../axios/axios-client';
-import { PINATA_BASE_URL, PINATA_JSON_UPLOAD, PINATA_GATEWAY } from '../../utils/constants';
+import { PINATA_BASE_URL, PINATA_JSON_UPLOAD, PINATA_GATEWAY } from '../../../utils/constants';
 
 export const pinJson = async (jsonBody: string) => {
     try {
