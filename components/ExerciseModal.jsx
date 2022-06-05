@@ -106,7 +106,7 @@ import {
                 align={'center'}
                 justify={'center'}
                 bg={useColorModeValue('gray.50', 'gray.800')}>
-                <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+                <Stack spacing={8} mx={'auto'} maxW={900} py={12} px={6}>
                     <Stack align={'center'}>
                         <Heading fontSize={'4xl'}>{name.toUpperCase()}</Heading>
                         <Text fontSize={'lg'} color={'gray.600'}>
@@ -157,6 +157,7 @@ import {
                                     <Link color={'blue.400'}>Reset</Link>
                                 </Stack>
                             </Stack>
+                            
                         </Stack>
                     </Box>
                 </Stack>
