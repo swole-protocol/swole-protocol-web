@@ -12,6 +12,7 @@ function NavBar() {
       <Flex gap={6}>
         <Link href='/'>Home</Link>
         <Link href='/exercises'>Exercises</Link>
+        <Link href='/workouts'>Workouts</Link>
         <ConnectButton theme={darkTheme()} showBalance={false} />
       </Flex>
     </Flex>
