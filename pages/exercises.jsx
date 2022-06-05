@@ -24,6 +24,7 @@ function Exercise() {
     <Wrap>
       {data?.map(exercise => {
         return (
+          // eslint-disable-next-line react/jsx-key
           <WrapItem>
             <ExerciseModal exercise={exercise} handleAddWorkout={handleAddWorkout} />
           </WrapItem>
@@ -36,6 +37,7 @@ function Exercise() {
        {newWorkout.length === 0 && <p>add workouts to mint</p>}
        {newWorkout.length > 0 && newWorkout.map(workout => {
          return (
+           // eslint-disable-next-line react/jsx-key
            <Box>
            <Heading size='sm'>{workout.name}</Heading>
            {/* {showTrash && <Trash
@@ -49,7 +51,7 @@ function Exercise() {
      </Box>
      <Center>
      {/* {newWorkout.length > 0 && address && <Button m='0 auto' my={2} >Mint Workout</Button>} */}
-     {newWorkout.length > 0 && address && <MintButton/>}
+     {newWorkout.length > 0 && address && <MintButton workoutData={`{"name": "test"}`}/>}
        {!address && <p>☝️ Connect wallet to mint ☝️</p>}
      </Center>
      </Box>

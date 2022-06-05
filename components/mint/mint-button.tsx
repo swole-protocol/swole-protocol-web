@@ -24,6 +24,7 @@ import {
   Center,
   Link,
 } from "@chakra-ui/react";
+import Web3Modal from 'web3modal'
 
 const MintButton = (workoutData: string): JSX.Element => {
   const [isMinting, setIsMinting] = useState(false);
@@ -42,20 +43,18 @@ const MintButton = (workoutData: string): JSX.Element => {
 
   const mint = async () => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider(
-        process.env.NEXT_PUBLIC_ALCHEMY_POLYGON_RPC
-      );
+        const web3Modal = new Web3Modal();
+        const connection = await web3Modal.connect();
+        const provider = new ethers.providers.Web3Provider(connection);
+        const signer = provider.getSigner();
 
-      const addr = useAddress();
-      
-      const signer = provider.getSigner();
       const contract = new ethers.Contract(
         SWOLE_PROTOCOL_ADDRESS,
         SwoleProtocol.abi,
         signer
       );
 
-      const uploadWorkoutUrl = await uploadToPinata();
+      const uploadWorkoutUrl = "https://gateway.pinata.cloud/ipfs/Qmd4k2bMfiLeqgV4HDddGffSQ4v864n4rdK6fyciQDtfE5"//await uploadToPinata();
 
       const transaction = await contract.mintWorkout(uploadWorkoutUrl);
       const receipt = await transaction.wait();
