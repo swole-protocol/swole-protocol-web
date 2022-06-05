@@ -4,10 +4,10 @@ import { MdClose } from 'react-icons/md'
 import ExerciseModal from "../components/ExerciseModal";
 import MintButton from "../components/mint/mint-button";
 import { useState } from 'react';
-import {fetchTransactionsByTag} from '../pages/api/arweave-client';
+import { fetchTransactionsByTag } from '../pages/api/arweave-client';
 
 function arweaveTxnToExercise(txn) {
-  const {tags} = txn.node
+  const { tags } = txn.node
 
 
   let exerciseObject = {}
@@ -61,7 +61,7 @@ function Exercises(data) {
           );
         })}
       </Wrap>
-      <Box position='sticky'>
+      <Box position='sticky' bottom='1rem'>
         <Box mt={6} h='30vh' w='25rem' border='1px solid #eee' textAlign='center'>
           <Heading size='md' pb={4}>Workout Plan</Heading>
           {newWorkout.length === 0 && <p>add workouts to mint</p>}
@@ -88,7 +88,7 @@ export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const data = await fetchTransactionsByTag("swole-protocol");
-   const { edges } = data.props;
+  const { edges } = data.props;
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
