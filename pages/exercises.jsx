@@ -78,8 +78,8 @@ function Exercises(data) {
           })}
         </Box>
         <Center>
-          {newWorkout.length > 0 && address && <MintButton workoutData={`{"name": "test"}`} />}
-          {!address && <p>☝️ Connect wallet to mint ☝️</p>}
+          {newWorkout.length > 0 && <MintButton workoutData={`{"name": "test"}`} />}
+          {!newWorkout.length  && <p>☝️ Connect wallet to mint ☝️</p>}
         </Center>
       </Box>
     </Flex>
@@ -92,7 +92,6 @@ export async function getStaticProps() {
   const data = await fetchTransactionsByTag("swole-protocol");
    const { edges } = data.props;
 
-   console.log(edges.length)
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {

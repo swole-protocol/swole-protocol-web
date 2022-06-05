@@ -14,6 +14,28 @@ import {
   Link,
 } from "@chakra-ui/react";
 import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
+
+const providerOptions = {
+    walletconnect: {
+      package: WalletConnectProvider, // required
+      options: {
+        rpc: {
+          137: process.env.NEXT_PUBLIC_ALCHEMY_POLYGON_RPC, 
+        }
+      },
+    },
+    coinbasewallet: {
+      package: CoinbaseWalletSDK, // Required
+      options: {
+        appName: "Swole-Protocol", // Required
+        rpc: process.env.NEXT_PUBLIC_ALCHEMY_POLYGON_RPC, // Optional if `infuraId` is provided; otherwise it's required
+        chainId: 137, // Optional. It defaults to 1 if not provided
+        darkMode: true, // Optional. Use dark theme, defaults to false
+      },
+    },
+  };
 
 const MintButton = (workoutData: string): JSX.Element => {
   const [isMinting, setIsMinting] = useState(false);
@@ -32,7 +54,12 @@ const MintButton = (workoutData: string): JSX.Element => {
 
   const mint = async () => {
     try {
-      const web3Modal = new Web3Modal();
+        const web3Modal = new Web3Modal({
+            network: "matic", // optional
+            cacheProvider: true, // optional
+            providerOptions, // required
+          });
+          web3Modal.clearCachedProvider();
       const connection = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(connection);
       const signer = provider.getSigner();
