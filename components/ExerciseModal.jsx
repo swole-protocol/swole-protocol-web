@@ -17,15 +17,13 @@ import {
     ModalContent,
     ModalBody,
     Center,
-    List,
-    ListItem,
-    ListIcon,
     CheckIcon,
     Image
   } from "@chakra-ui/react";
 
 
   export default function BeginModal(props) {
+    const { handleAddWorkout } = props;
     const { isOpen, onOpen, onClose } = useDisclosure();
     const {
         name,
@@ -39,7 +37,7 @@ import {
 
     return (
         <Box mb={[0, 2]}>
-            <Center py={6} onClick={onOpen}>
+            <Center py={6}>
                 <Box
                     maxW={'330px'}
                     w={'full'}
@@ -48,6 +46,7 @@ import {
                     rounded={'md'}
                     overflow={'hidden'}>
                     <Stack
+                        onClick={onOpen}
                         textAlign={'center'}
                         p={6}
                         color={useColorModeValue('gray.800', 'white')}
@@ -69,7 +68,7 @@ import {
 
                     <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
                         <Button
-                            onClick={addtoList}
+                            onClick={onClick={() => handleAddWorkout(name)}}
                             w={'full'}
                             bg={'green.400'}
                             color={'white'}
@@ -89,8 +88,8 @@ import {
                     backdropInvert='10%'
                     backdropBlur='3px'
                 />
-                <ModalContent>
-                    <ModalBody p={6}>
+                <ModalContent maxW='75vw'>
+                    <ModalBody p={6} maxH='80vh' overflow='scroll'>
                         <Flex
                             minH={'100vh'}
                             align={'center'}
@@ -154,5 +153,4 @@ import {
         </Box >
     )
   }
-
-  function addtoList(){}
+  
