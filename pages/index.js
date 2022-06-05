@@ -2,6 +2,8 @@ import { Heading, Flex, Box, Text, Button, HStack } from '@chakra-ui/react'
 import Link from 'next/link'
 
 export default function Home() {
+  const sampleData = require("../sample-json/pinata-sample.json");
+
   return (
     <Box p={32}>
       <Heading size='2xl' maxW='25rem'>On chain fitness</Heading>
