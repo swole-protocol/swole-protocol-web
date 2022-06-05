@@ -5,7 +5,7 @@ import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { publicProvider } from 'wagmi/providers/public';
 import { ChakraProvider, Box } from '@chakra-ui/react';
-import NavBar from './NavBar'
+import NavBar from '../components/NavBar'
 const { chains, provider } = configureChains(
   [chain.polygon],
   [
