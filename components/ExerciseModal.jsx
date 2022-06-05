@@ -30,11 +30,11 @@ export default function BeginModal(props) {
     muscle_groups,
     equipment,
     image_link,
-    video,
+    video_link,
     metadata
   } = props.exercise;
 
-  
+
   return (
     <Box mb={[0, 2]}>
       <Flex py={6}>
@@ -119,7 +119,7 @@ export default function BeginModal(props) {
                   </FormControl>
                   <FormControl>
                       <FormLabel>muscleGroup:</FormLabel>
-                      <FormLabel>{muscle_groups.join(', ')}</FormLabel>
+                      <FormLabel>{muscle_groups}</FormLabel>
                   </FormControl>
                   <FormControl>
                       <FormLabel>Equipment:</FormLabel>

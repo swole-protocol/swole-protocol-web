@@ -1,11 +1,11 @@
-import {arweaveApolloClient} from './apollo/apollo-client';
+import {ArweaveApolloClient} from './apollo/apollo-client';
 import { gql } from "@apollo/client";
 
 export const fetchTransactionsByTag = async (tag: string) => {
-    let tags = [  
+    let tags = [
         { "name": "brand", "values": [tag] }
     ] as any;
-    
+
 
     const FIND_BY_TAG_QUERY = gql`
         query getDataByTags($tags: [TagFilter!]) {
@@ -24,7 +24,7 @@ export const fetchTransactionsByTag = async (tag: string) => {
     `;
 
     try {
-        const { data } = await arweaveApolloClient.query({
+        const { data } = await ArweaveApolloClient.query({
             query: FIND_BY_TAG_QUERY,
             variables: {
                 "tags": tags
