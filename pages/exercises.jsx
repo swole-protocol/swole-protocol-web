@@ -6,12 +6,12 @@ function Exercise() {
   const data = require('../res/testData.json');
   const [newWorkout, setNewWorkout] = useState([]);
 
-  const handleAddWorkout = (name) => {
+  const handleAddWorkout = (workout) => {
     if (newWorkout.length >= 7) {
       return
     }
-    else if (!newWorkout.some(x => x === name)) {
-      setNewWorkout(oldState => [...oldState, name]);
+    if (!newWorkout.some(x => x === workout)) {
+      setNewWorkout(oldState => [...oldState, workout]);
     }
   }
 
@@ -33,7 +33,7 @@ function Exercise() {
        {newWorkout.length > 0 && newWorkout.map(workout => {
          return (
            <Box>
-           <Heading size='sm'>{workout}</Heading>
+           <Heading size='sm'>{workout.name}</Heading>
            {/* {showTrash && <Trash
              size={20}
              strokeWidth={2}
