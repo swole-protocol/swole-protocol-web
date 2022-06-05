@@ -1,14 +1,14 @@
 import { Wrap, WrapItem, Flex, Box, Heading, Center, Icon, HStack } from "@chakra-ui/react";
 import useAddress from '../utils/useAddress.js';
 import { MdClose } from 'react-icons/md'
-import {ArweaveApolloClient} from './api/apollo/apollo-client.ts';
+import { ArweaveApolloClient } from './api/apollo/apollo-client.ts';
 import ExerciseModal from "../components/ExerciseModal";
 import MintButton from "../components/mint/mint-button";
 import { useState } from 'react';
-import {fetchTransactionsByTag} from '../pages/api/arweave-client';
+import { fetchTransactionsByTag } from '../pages/api/arweave-client';
 
 function arweaveTxnToExercise(txn) {
-  const {tags} = txn.node
+  const { tags } = txn.node
 
 
   let exerciseObject = {}
@@ -31,7 +31,8 @@ function Exercises(data) {
     if (newWorkout.length >= 7) {
       return
     }
-    if (!newWorkout?.some(x => x === workout)) {
+
+    if (!newWorkout?.some(x => x.name === workout.name)) {
       setNewWorkout(oldState => [...oldState, workout]);
     }
   }
@@ -78,7 +79,7 @@ function Exercises(data) {
           })}
         </Box>
         <Center>
-          {newWorkout.length > 0 && address && <MintButton workoutData={`{"name": "test"}`} />}
+          {newWorkout.length > 0 && address && <MintButton workoutData={JSON.stringify(exercises)} />}
           {!address && <p>☝️ Connect wallet to mint ☝️</p>}
         </Center>
       </Box>
@@ -90,9 +91,9 @@ export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const data = await fetchTransactionsByTag("swole-protocol");
-   const { edges } = data.props;
+  const { edges } = data.props;
 
-   console.log(edges.length)
+  console.log(edges.length)
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
