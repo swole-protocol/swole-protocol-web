@@ -25,6 +25,7 @@ const MintButton = (workoutData: string): JSX.Element => {
     try {
       const result = await pinJson(workoutData);
       setFileUrl(result);
+      return result;
     } catch (error) {
       console.log(`[Error uploading data to IPFS] ${error}`);
     }
@@ -43,9 +44,7 @@ const MintButton = (workoutData: string): JSX.Element => {
         signer
       );
 
-      //TODO: don't hard code this
-      const uploadWorkoutUrl =
-        "https://gateway.pinata.cloud/ipfs/Qmd4k2bMfiLeqgV4HDddGffSQ4v864n4rdK6fyciQDtfE5"; //await uploadToPinata();
+      const uploadWorkoutUrl = await uploadToPinata();
 
       const transaction = await contract.mintWorkout(uploadWorkoutUrl);
       setIsMinting(true);
