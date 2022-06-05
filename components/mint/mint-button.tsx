@@ -6,6 +6,7 @@ import {
 import { ethers } from "ethers";
 import SwoleProtocol from "../../artifacts/SwoleProtocol.json";
 import { pinJson } from "../../pages/api/pinata/pinata-service";
+import useAddress from '../../utils/useAddress.js';
 import {
   useToast,
   Button,
@@ -44,6 +45,9 @@ const MintButton = (workoutData: string): JSX.Element => {
       const provider = new ethers.providers.JsonRpcProvider(
         process.env.NEXT_PUBLIC_ALCHEMY_POLYGON_RPC
       );
+
+      const addr = useAddress();
+      
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
         SWOLE_PROTOCOL_ADDRESS,
@@ -76,7 +80,7 @@ const MintButton = (workoutData: string): JSX.Element => {
         colorScheme="green"
         onClick={mint}
         disabled={isMinting}
-        mt="10"
+        my="2"
         fontSize={{ base: "s", sm: "xl" }}
       >
         Mint

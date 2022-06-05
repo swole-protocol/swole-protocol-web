@@ -2,6 +2,7 @@ import { Wrap, WrapItem, Flex, Box, Heading, Button, Center } from "@chakra-ui/r
 import useAddress from '../utils/useAddress.js';
 
 import ExerciseModal from "../components/ExerciseModal";
+import MintButton from "../components/mint/mint-button";
 import { useState } from 'react';
 
 function Exercise() {
@@ -47,7 +48,8 @@ function Exercise() {
        })}
      </Box>
      <Center>
-     {newWorkout.length > 0 && address && <Button m='0 auto' my={2}>Mint Workout</Button>}
+     {/* {newWorkout.length > 0 && address && <Button m='0 auto' my={2} >Mint Workout</Button>} */}
+     {newWorkout.length > 0 && address && <MintButton/>}
        {!address && <p>☝️ Connect wallet to mint ☝️</p>}
      </Center>
      </Box>
