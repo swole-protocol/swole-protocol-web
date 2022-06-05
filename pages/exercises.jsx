@@ -1,12 +1,30 @@
 import { Wrap, WrapItem, Flex, Box, Heading, Center, Icon, HStack } from "@chakra-ui/react";
 import useAddress from '../utils/useAddress.js';
+<<<<<<< Updated upstream
 import { MdClose } from 'react-icons/md'
+=======
+import {ArweaveApolloClient} from './api/apollo/apollo-client.ts';
+>>>>>>> Stashed changes
 import ExerciseModal from "../components/ExerciseModal";
 import MintButton from "../components/mint/mint-button";
 import { useState } from 'react';
+import {fetchTransactionsByTag} from '../pages/api/arweave-client';
 
-function Exercise() {
-  const data = require('../res/testData.json');
+function arweaveTxnToExercise(txn) {
+  const {tags} = txn.node
+
+
+  let exerciseObject = {}
+  tags.forEach(element => {
+    exerciseObject[element.name] = element.value
+  });
+
+  return exerciseObject
+}
+
+function Exercises(data) {
+  const exercises = data.data
+
   const [newWorkout, setNewWorkout] = useState([]);
   const [showTrash, setShowTrash] = useState(false);
   const [currentWorkout, setCurrentWorkout] = useState(null)
@@ -39,14 +57,22 @@ function Exercise() {
   return (
     <Flex>
       <Wrap>
+<<<<<<< Updated upstream
         {data?.map(exercise => {
           return (
             <WrapItem>
               <ExerciseModal exercise={exercise} handleAddWorkout={handleAddWorkout} />
+=======
+        {exercises?.map((exercise, idx) => {
+          return (
+            <WrapItem key={idx}>
+              <ExerciseModal exercise={arweaveTxnToExercise(exercise)} handleAddWorkout={handleAddWorkout} />
+>>>>>>> Stashed changes
             </WrapItem>
           );
         })}
       </Wrap>
+<<<<<<< Updated upstream
       <Box>
         <Box mt={6} h='30vh' w='25rem' border='1px solid #eee' textAlign='center'>
           <Heading size='md' pb={4}>Workout Plan</Heading>
@@ -67,8 +93,49 @@ function Exercise() {
           {!address && <p>☝️ Connect wallet to mint ☝️</p>}
         </Center>
       </Box>
+=======
+    <Box>
+    <Box mt={6} h='30vh' w='25rem' border='1px solid #eee' textAlign='center'>
+       <Heading size='md' pb={4}>Workout Plan</Heading>
+       {newWorkout.length === 0 && <p>add workouts to mint</p>}
+       {newWorkout.length > 0 && newWorkout.map(workout => {
+         return (
+           <Box>
+           <Heading size='sm'>{workout.name}</Heading>
+           {/* {showTrash && <Trash
+             size={20}
+             strokeWidth={2}
+             color={'black'}
+           />} */}
+           </Box>
+         )
+       })}
+     </Box>
+     <Center>
+     {newWorkout.length > 0 && address && <Button m='0 auto' my={2}>Mint Workout</Button>}
+       {!address && <p>☝️ Connect wallet to mint ☝️</p>}
+     </Center>
+     </Box>
+>>>>>>> Stashed changes
     </Flex>
   )
 }
 
-export default Exercise;
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const data = await fetchTransactionsByTag("swole-protocol");
+   const { edges } = data.props;
+
+   console.log(edges.length)
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      data: edges
+    },
+  }
+}
+
+
+export default Exercises;

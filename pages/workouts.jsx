@@ -2,7 +2,7 @@ import { Wrap, WrapItem } from "@chakra-ui/react";
 import {ApolloProvider, useQuery} from "@apollo/client";
 import {SwoleApolloClient} from './api/apollo/apollo-client.ts';
 import { Spinner } from '@chakra-ui/react'
-import gql from "graphql-tag";
+import gql from 'graphql-tag';
 
 // See our Subgraph GraphQL explorer here https://thegraph.com/hosted-service/subgraph/mnlesane/swole-protocol-mainnet
 const GET_ALL_WORKOUTS = gql`
