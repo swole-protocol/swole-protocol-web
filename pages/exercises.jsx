@@ -7,8 +7,8 @@ function Exercise() {
 
   return(
     <Wrap>
-      {data.exercises.map(exercise => {
-        return ( 
+      {data.map(exercise => {
+        return (
           <WrapItem>
             <ExerciseModal exercise={exercise}/>
           </WrapItem>
