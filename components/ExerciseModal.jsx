@@ -68,7 +68,7 @@ export default function BeginModal(props) {
 
           <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
             <Button
-              onClick={() => handleAddWorkout(name)}
+              onClick={() => handleAddWorkout(props.exercise)}
               w={'full'}
               bg={'green.400'}
               color={'white'}
@@ -126,12 +126,11 @@ export default function BeginModal(props) {
                       <FormLabel>{equipment}</FormLabel>
                   </FormControl>
                     {
-                        image_link === null ?
-                            <FormControl>
-                                <FormLabel>Image:</FormLabel>
-                                <Image src={image_link}></Image>
-                            </FormControl> :
-                            <div/>
+                      image_link &&
+                          <FormControl>
+                              <FormLabel>Image:</FormLabel>
+                              <Image src={image_link}></Image>
+                          </FormControl>
                     }
                   </Stack>
                 </Box>
