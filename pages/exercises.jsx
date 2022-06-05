@@ -18,7 +18,8 @@ function Exercise() {
   return (
     <Flex>
     <Wrap>
-      {data.map(exercise => {
+      {data?.map(exercise => {
+        return (
           <WrapItem>
             <ExerciseModal exercise={exercise} handleAddWorkout={handleAddWorkout} />
           </WrapItem>
