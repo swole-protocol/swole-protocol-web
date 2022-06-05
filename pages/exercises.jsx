@@ -92,7 +92,6 @@ export async function getStaticProps() {
   const data = await fetchTransactionsByTag("swole-protocol");
    const { edges } = data.props;
 
-   console.log(edges.length)
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
   return {
