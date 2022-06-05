@@ -53,7 +53,7 @@ function Exercise() {
           {newWorkout.length === 0 && <p>add workouts to mint</p>}
           {newWorkout.length > 0 && newWorkout.map((workout, idx) => {
             return (
-              <HStack ml={32} w={64} h={6} onMouseOver={() => handleTrashIn(workout.name)} onMouseOut={() => handleTrashOut()}>
+              <HStack ml={24} w={80} h={6} onMouseOver={() => handleTrashIn(workout.name)} onMouseOut={() => handleTrashOut()}>
                 <Heading size='sm'>{workout.name}</Heading>
                 <Box w={10}>
                   {showTrash && currentWorkout == workout.name && <Icon as={MdClose} onClick={() => deleteFromWorkout(workout.name)} />}
