@@ -76,6 +76,73 @@
 		"video": "url here",
 		"brand": "swole-protocol",
 		"metadata": [] 
+		},
+		{
+		"name": "bicep curl",
+		"description":  "Grab the barbell with palms facing outwards.  Lift the the bar towards your chest, hold, and bring back down slowly to the starting position",
+		"muscleGroup": "Arms",
+		"equipment": "barbell",
+		"type": "weights",
+		"image": "here",
+		"video": "url here",
+		"brand": "swole-protocol",
+		"metadata": [] 
+		},
+		{
+		"name": "bicep curl",
+		"description":  "Grab the barbell with palms facing outwards.  Lift the the bar towards your chest, hold, and bring back down slowly to the starting position",
+		"muscleGroup": "Arms",
+		"equipment": "barbell",
+		"type": "weights",
+		"image": "here",
+		"video": "url here",
+		"brand": "swole-protocol",
+		"metadata": [] 
+		},
+		{
+		"name": "bicep curl",
+		"description":  "Grab the barbell with palms facing outwards.  Lift the the bar towards your chest, hold, and bring back down slowly to the starting position",
+		"muscleGroup": "Arms",
+		"equipment": "barbell",
+		"type": "weights",
+		"image": "here",
+		"video": "url here",
+		"brand": "swole-protocol",
+		"metadata": [] 
+		},
+		{
+		"name": "bicep curl",
+		"description":  "Grab the barbell with palms facing outwards.  Lift the the bar towards your chest, hold, and bring back down slowly to the starting position",
+		"muscleGroup": "Arms",
+		"equipment": "barbell",
+		"type": "weights",
+		"image": "here",
+		"video": "url here",
+		"brand": "swole-protocol",
+		"metadata": [] 
+		},
+		{
+		"name": "bicep curl",
+		"description":  "Grab the barbell with palms facing outwards.  Lift the the bar towards your chest, hold, and bring back down slowly to the starting position",
+		"muscleGroup": "Arms",
+		"equipment": "barbell",
+		"type": "weights",
+		"image": "here",
+		"video": "url here",
+		"brand": "swole-protocol",
+		"metadata": [] 
+		},
+		{
+		"name": "bicep curl",
+		"description":  "Grab the barbell with palms facing outwards.  Lift the the bar towards your chest, hold, and bring back down slowly to the starting position",
+		"muscleGroup": "Arms",
+		"equipment": "barbell",
+		"type": "weights",
+		"image": "here",
+		"video": "url here",
+		"brand": "swole-protocol",
+		"metadata": [] 
 		} 
+
    ]
 }
