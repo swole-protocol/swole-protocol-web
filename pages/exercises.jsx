@@ -1,16 +1,19 @@
 import { Wrap, WrapItem, Flex, Box, Heading, Button, Center } from "@chakra-ui/react";
+import useAddress from '../utils/useAddress.js';
 
 import ExerciseModal from "../components/ExerciseModal";
 import { useState } from 'react';
+
 function Exercise() {
   const data = require('../res/testData.json');
   const [newWorkout, setNewWorkout] = useState([]);
+  let address = useAddress();
 
   const handleAddWorkout = (workout) => {
     if (newWorkout.length >= 7) {
       return
     }
-    if (!newWorkout.some(x => x === workout)) {
+    if (!newWorkout?.some(x => x === workout)) {
       setNewWorkout(oldState => [...oldState, workout]);
     }
   }
@@ -43,7 +46,10 @@ function Exercise() {
          )
        })}
      </Box>
-     {newWorkout.length > 0 && <Center><Button m='0 auto' my={2}>Mint Workout</Button></Center>}
+     <Center>
+     {newWorkout.length > 0 && address && <Button m='0 auto' my={2}>Mint Workout</Button>}
+       {!address && <p>☝️ Connect wallet to mint ☝️</p>}
+     </Center>
      </Box>
     </Flex>
   )
