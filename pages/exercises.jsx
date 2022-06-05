@@ -1,12 +1,27 @@
 import { Wrap, WrapItem, Flex, Box, Heading, Center, Icon, HStack } from "@chakra-ui/react";
 import useAddress from '../utils/useAddress.js';
 import { MdClose } from 'react-icons/md'
+import {ArweaveApolloClient} from './api/apollo/apollo-client.ts';
 import ExerciseModal from "../components/ExerciseModal";
 import MintButton from "../components/mint/mint-button";
 import { useState } from 'react';
+import {fetchTransactionsByTag} from '../pages/api/arweave-client';
 
-function Exercise() {
-  const data = require('../res/testData.json');
+function arweaveTxnToExercise(txn) {
+  const {tags} = txn.node
+
+
+  let exerciseObject = {}
+  tags.forEach(element => {
+    exerciseObject[element.name] = element.value
+  });
+
+  return exerciseObject
+}
+
+function Exercises(data) {
+  const exercises = data.data
+
   const [newWorkout, setNewWorkout] = useState([]);
   const [showTrash, setShowTrash] = useState(false);
   const [currentWorkout, setCurrentWorkout] = useState(null)
@@ -39,10 +54,10 @@ function Exercise() {
   return (
     <Flex>
       <Wrap>
-        {data?.map(exercise => {
+        {exercises?.map((exercise, idx) => {
           return (
-            <WrapItem>
-              <ExerciseModal exercise={exercise} handleAddWorkout={handleAddWorkout} />
+            <WrapItem key={idx}>
+              <ExerciseModal exercise={arweaveTxnToExercise(exercise)} handleAddWorkout={handleAddWorkout} />
             </WrapItem>
           );
         })}
@@ -71,4 +86,21 @@ function Exercise() {
   )
 }
 
-export default Exercise;
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const data = await fetchTransactionsByTag("swole-protocol");
+   const { edges } = data.props;
+
+   console.log(edges.length)
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      data: edges
+    },
+  }
+}
+
+
+export default Exercises;
