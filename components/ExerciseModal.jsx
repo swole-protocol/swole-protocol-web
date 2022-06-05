@@ -62,7 +62,7 @@ export default function BeginModal(props) {
               {name.toUpperCase()}
             </Text>
             <Stack direction={'row'} align={'center'} justify={'center'}>
-              <Image boxSize='270px' src={image_link} />
+              <Image boxSize='270px' alt={'workout image'} src={image_link} />
             </Stack>
           </Stack>
 
@@ -129,7 +129,7 @@ export default function BeginModal(props) {
                       image_link &&
                           <FormControl>
                               <FormLabel>Image:</FormLabel>
-                              <Image src={image_link}></Image>
+                              <Image alt='workout image' src={image_link}></Image>
                           </FormControl>
                     }
                   </Stack>
