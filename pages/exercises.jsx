@@ -1,10 +1,7 @@
 import { Wrap, WrapItem, Flex, Box, Heading, Center, Icon, HStack } from "@chakra-ui/react";
 import useAddress from '../utils/useAddress.js';
-<<<<<<< Updated upstream
 import { MdClose } from 'react-icons/md'
-=======
 import {ArweaveApolloClient} from './api/apollo/apollo-client.ts';
->>>>>>> Stashed changes
 import ExerciseModal from "../components/ExerciseModal";
 import MintButton from "../components/mint/mint-button";
 import { useState } from 'react';
@@ -57,22 +54,14 @@ function Exercises(data) {
   return (
     <Flex>
       <Wrap>
-<<<<<<< Updated upstream
-        {data?.map(exercise => {
-          return (
-            <WrapItem>
-              <ExerciseModal exercise={exercise} handleAddWorkout={handleAddWorkout} />
-=======
         {exercises?.map((exercise, idx) => {
           return (
             <WrapItem key={idx}>
               <ExerciseModal exercise={arweaveTxnToExercise(exercise)} handleAddWorkout={handleAddWorkout} />
->>>>>>> Stashed changes
             </WrapItem>
           );
         })}
       </Wrap>
-<<<<<<< Updated upstream
       <Box>
         <Box mt={6} h='30vh' w='25rem' border='1px solid #eee' textAlign='center'>
           <Heading size='md' pb={4}>Workout Plan</Heading>
@@ -93,30 +82,6 @@ function Exercises(data) {
           {!address && <p>☝️ Connect wallet to mint ☝️</p>}
         </Center>
       </Box>
-=======
-    <Box>
-    <Box mt={6} h='30vh' w='25rem' border='1px solid #eee' textAlign='center'>
-       <Heading size='md' pb={4}>Workout Plan</Heading>
-       {newWorkout.length === 0 && <p>add workouts to mint</p>}
-       {newWorkout.length > 0 && newWorkout.map(workout => {
-         return (
-           <Box>
-           <Heading size='sm'>{workout.name}</Heading>
-           {/* {showTrash && <Trash
-             size={20}
-             strokeWidth={2}
-             color={'black'}
-           />} */}
-           </Box>
-         )
-       })}
-     </Box>
-     <Center>
-     {newWorkout.length > 0 && address && <Button m='0 auto' my={2}>Mint Workout</Button>}
-       {!address && <p>☝️ Connect wallet to mint ☝️</p>}
-     </Center>
-     </Box>
->>>>>>> Stashed changes
     </Flex>
   )
 }
