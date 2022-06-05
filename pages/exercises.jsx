@@ -78,8 +78,8 @@ function Exercises(data) {
           })}
         </Box>
         <Center>
-          {newWorkout.length > 0 && address && <MintButton workoutData={`{"name": "test"}`} />}
-          {!address && <p>☝️ Connect wallet to mint ☝️</p>}
+          {newWorkout.length > 0 && <MintButton workoutData={`{"name": "test"}`} />}
+          {!newWorkout.length  && <p>☝️ Connect wallet to mint ☝️</p>}
         </Center>
       </Box>
     </Flex>
