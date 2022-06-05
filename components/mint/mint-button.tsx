@@ -72,7 +72,7 @@ const MintButton = (workoutData: string): JSX.Element => {
 
       //TODO: don't hard code this
       const uploadWorkoutUrl =
-        "https://gateway.pinata.cloud/ipfs/Qmd4k2bMfiLeqgV4HDddGffSQ4v864n4rdK6fyciQDtfE5"; //await uploadToPinata();
+        "https://gateway.pinata.cloud/ipfs/QmcjhNxJUf6sk6wWqs4TDTPwmVEWfPwYojBum3sgZeDyz2"; //await uploadToPinata();
 
       const transaction = await contract.mintWorkout(uploadWorkoutUrl);
       setIsMinting(true);
