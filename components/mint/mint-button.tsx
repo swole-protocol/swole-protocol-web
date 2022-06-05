@@ -6,25 +6,14 @@ import {
 import { ethers } from "ethers";
 import SwoleProtocol from "../../artifacts/SwoleProtocol.json";
 import { pinJson } from "../../pages/api/pinata/pinata-service";
-import useAddress from '../../utils/useAddress.js';
 import {
-  useToast,
   Button,
   HStack,
-  Input,
-  Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
   CircularProgress,
   Center,
   Link,
 } from "@chakra-ui/react";
-import Web3Modal from 'web3modal'
+import Web3Modal from "web3modal";
 
 const MintButton = (workoutData: string): JSX.Element => {
   const [isMinting, setIsMinting] = useState(false);
@@ -43,10 +32,10 @@ const MintButton = (workoutData: string): JSX.Element => {
 
   const mint = async () => {
     try {
-        const web3Modal = new Web3Modal();
-        const connection = await web3Modal.connect();
-        const provider = new ethers.providers.Web3Provider(connection);
-        const signer = provider.getSigner();
+      const web3Modal = new Web3Modal();
+      const connection = await web3Modal.connect();
+      const provider = new ethers.providers.Web3Provider(connection);
+      const signer = provider.getSigner();
 
       const contract = new ethers.Contract(
         SWOLE_PROTOCOL_ADDRESS,
@@ -54,22 +43,17 @@ const MintButton = (workoutData: string): JSX.Element => {
         signer
       );
 
-      const uploadWorkoutUrl = "https://gateway.pinata.cloud/ipfs/Qmd4k2bMfiLeqgV4HDddGffSQ4v864n4rdK6fyciQDtfE5"//await uploadToPinata();
+      //TODO: don't hard code this
+      const uploadWorkoutUrl =
+        "https://gateway.pinata.cloud/ipfs/Qmd4k2bMfiLeqgV4HDddGffSQ4v864n4rdK6fyciQDtfE5"; //await uploadToPinata();
 
       const transaction = await contract.mintWorkout(uploadWorkoutUrl);
+      setIsMinting(true);
       const receipt = await transaction.wait();
       setTxReceipt(receipt.transactionHash);
-      setIsMinting(true);
     } catch (error) {
       console.log(`[Error minting] ${error}`);
     }
-  };
-
-  const modalCloseHandler = () => {
-    setIsMinting(false);
-    setModelOpen(false);
-    setTxReceipt("");
-    setFileUrl("");
   };
 
   return (
@@ -79,45 +63,28 @@ const MintButton = (workoutData: string): JSX.Element => {
         colorScheme="green"
         onClick={mint}
         disabled={isMinting}
+        hidden={isMinting}
         my="2"
         fontSize={{ base: "s", sm: "xl" }}
       >
         Mint
       </Button>
       {isMinting && (
-        <Modal
-          isOpen={modelOpen}
-          onClose={modalCloseHandler}
-          closeOnOverlayClick={false}
-          isCentered
-        >
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Processing transaction...</ModalHeader>
-            {txReceipt && <ModalCloseButton />}
-            <ModalBody>
-              <Center h="160px">
-                {!txReceipt && (
-                  <CircularProgress
-                    isIndeterminate
-                    color="green.300"
-                    size="100px"
-                  />
-                )}
-                {txReceipt && (
-                  <Link
-                    fontSize="lg"
-                    color="#3182ce"
-                    href={`${POLYGONSCAN_TX_URL}${txReceipt}`}
-                    isExternal
-                  >
-                    View your transaction
-                  </Link>
-                )}
-              </Center>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
+        <Center h="160px">
+          {!txReceipt && (
+            <CircularProgress isIndeterminate color="green.300" size="100px" />
+          )}
+          {txReceipt && (
+            <Link
+              fontSize="lg"
+              color="#3182ce"
+              href={`${POLYGONSCAN_TX_URL}${txReceipt}`}
+              isExternal
+            >
+              View your transaction
+            </Link>
+          )}
+        </Center>
       )}
     </HStack>
   );
