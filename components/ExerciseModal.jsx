@@ -20,6 +20,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 
+import { Link as ReachLink } from "@reach/router"
 
 export default function BeginModal(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -61,9 +62,11 @@ export default function BeginModal(props) {
               rounded={'full'}>
               {name.toUpperCase()}
             </Text>
-            <Stack direction={'row'} align={'center'} justify={'center'}>
-              <Image boxSize='270px' src={image_link} />
-            </Stack>
+	    <Link as={ReachLink} to={'/exercises/#/'+name}>
+              <Stack direction={'row'} align={'center'} justify={'center'}>
+                <Image boxSize='270px' src={image_link} />
+              </Stack>
+	    </Link>
           </Stack>
 
           <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
